@@ -166,16 +166,10 @@
             <input type="radio" name="contact" value="get-quote"> Get a Quote
           </label>
         </div>
-        <form id="contact-form">
+        <form id="contactForm">
           <input type="text" id="name" placeholder="Name" required>
           <input type="email" id="email" placeholder="Email*" required>
           <textarea id="message" placeholder="Message*" required></textarea>
-          <div class="checkbox-group">
-            <label>
-              <input type="checkbox" id="consent" required>
-              I consent to the processing of personal data after reading the <a href="#" target="_blank">Privacy Policy</a>.
-            </label>
-          </div>
           <button type="submit">Send Message</button>
         </form>
       </div>
@@ -190,6 +184,46 @@
       EOS2021 S.R.L. Via Nuoro, 16 – 00040 Ardea (Roma) P.iva: 02102651003
     </div>
   </div>
-  <script src="index.js"></script>
+  <script type="module">
+        
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+  
+const firebaseConfig = {
+  apiKey: "AIzaSyDb7h3LwgZISWXLPp6pFa1caZpqTwk5q5w",
+  authDomain: "mini-hackathon-dd36b.firebaseapp.com",
+  projectId: "mini-hackathon-dd36b",
+  storageBucket: "mini-hackathon-dd36b.firebasestorage.app",
+  messagingSenderId: "946600592262",
+  appId: "1:946600592262:web:d7d45e2ae7366ed93a6207"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+const contactForm = document.getElementById('contactForm');
+
+// Add event listener to form
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Push data to Firebase
+  push(ref(database, 'contacts'), {
+    name: name,
+    email: email,
+    message: message,
+  }).then(() => {
+    alert('Message submitted successfully!');
+    contactForm.reset();
+  }).catch((error) => {
+    console.error("Error writing to Firebase:", error);
+  });
+});
+
+</script>
 </body>
 </html>

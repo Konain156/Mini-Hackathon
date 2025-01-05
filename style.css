@@ -1,0 +1,403 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .nav-links a.active {
+    color: pink;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .logo .highlight {
+    color: pink;
+  }
+  .product-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .content {
+    max-width: 50%;
+  }
+  
+  .content h1 {
+    font-size: 36px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .content .bold {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .content .highlight {
+    font-weight: bold;
+    color: #00a1e1;
+  }
+  
+  .content p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .image-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .image-container img {
+    width: 180px;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .product-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to right, #ff66c4, #ffc1e3);
+    clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+  }
+  .science-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .left {
+    max-width: 40%;
+    text-align: center;
+  }
+  
+  .scientist-img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stats {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+  }
+  
+  .stat-box {
+    background-color: #f5faff;
+    border: 2px dashed #00a1e1;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .stat-box h3 {
+    font-size: 24px;
+    color: #00a1e1;
+    margin: 0;
+  }
+  
+  .stat-box p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .right {
+    max-width: 50%;
+  }
+  
+  .right h1 {
+    font-size: 36px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .right .highlight {
+    color: #ff66c4;
+    font-weight: bold;
+  }
+  
+  .right .blue-text {
+    color: #00a1e1;
+    font-weight: bold;
+  }
+  
+  .right p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00a1e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #007bb5;
+  }
+  
+  .science-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to right, #ff66c4, #ffc1e3);
+    clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: -1;
+  }
+  .header {
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+    color: #062b5f;
+  }
+  .header h1 span {
+    color: #ff2a8b;
+  }
+  .content-w {
+    margin-top: 20px;
+    line-height: 1.8;
+  }
+  .hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .hex {
+    width: 120px;
+    height: 140px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  .hex img {
+    max-width: 80px;
+    height: auto;
+  }
+  .hex-text {
+    position: absolute;
+    bottom: -10px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #333;
+  }
+  .colors-red {
+    background: #ff2a8b;
+  }
+  .colors-blue {
+    background: #5aa9e6;
+  }
+  .colors-green {
+    background: #85c47c;
+  }
+  .colors-orange {
+    background: #ffa500;
+  }
+  /* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  } */
+  .benefits-section {
+    position: relative;
+    border: 2px dashed #333;
+    padding: 20px;
+    background: #fff;
+  }
+  .benefits-header {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #062b5f;
+  }
+  .content {
+    padding-left: 80px;
+  }
+  .content p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+  .content h4 {
+    font-size: 1.2rem;
+    color: #062b5f;
+    margin-bottom: 5px;
+  }
+  .orange-wave {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: url('path-to-orange-wave.png') no-repeat center center;
+    background-size: cover;
+  }
+  /* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; */
+  
+
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-section {
+    width: 45%;
+  }
+
+  .form-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .form-section .radio-group {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .radio-group label {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .radio-group input {
+    margin-right: 5px;
+  }
+
+  .form-section form input,
+  .form-section form textarea,
+  .form-section form button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+
+  .form-section form textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  .form-section form button {
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .form-section form button:hover {
+    background-color: #0077cc;
+  }
+
+  .form-section .checkbox-group {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .form-section .checkbox-group input {
+    margin-right: 5px;
+  }
+
+  .product-section {
+    width: 45%;
+    text-align: center;
+  }
+
+  .product-section img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  

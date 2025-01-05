@@ -7,22 +7,27 @@
   <title>Navigation Bar</title>
 </head>
 <body>
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">Health</a></li>
-      <li><a href="#">Locations</a></li>
-      <li><a href="#">Shop</a></li>
-    </ul>
-    <div class="logo">
-      <span>CDS</span><span class="highlight">22</span><span>-formula</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#">Become A Retailer</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Recipe</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+            <ul>
+                <li><a href="#home" class="home">Home</a></li>
+                <li><a href="#health">Health</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#logo"><img src="asset/logo.png" alt="logo"/></a></li>
+                <li><a href="#retailer">Become a Retailer</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#recipe">Recipe</a></li>
+                <li> <span onclick="toggleCart()"><img src="asset/shopping-bag.png" alt=""> (<span id="cartCount">0</span>)</span></ul>   
+    </nav>
+</header>
+<section id="cartSection" class="cart-section">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <p id="cartTotal">Total: $0.00</p>
+  <button onclick="clearCart()">Clear Cart</button>
+  <button onclick="closeCart()">Close</button>
+</section>
   <section class="product-section">
     <div class="content">
       <h1>
@@ -150,9 +155,90 @@
           CDS22-formula offers superior value compared to probiotics containing equivalent quantities of bacteria. Efficient production and direct cost control allow us to offer a more affordable product on the market.
         </p>
       </div>
-      <div class="orange-wave"></div>
     </div>
   </div>
+  <section class="sectionsix">
+    <div class="sectionsix-heading">
+        <h1 style="font-size:3.5rem">Product Packaging</h1>
+    <p>CDS22-formula, is available in sachets and capsules to meet specific tastes and needs.<br>
+        Each format of CDS22-formula is gluten-free and vegetarian.</p>
+    </div>
+
+    <div class="frontimages">
+        <span class="icon-left-right">&#x276E;</span>
+        <div class="image-one">
+
+            <img src="asset/homepic.png" alt="homepic" width="280">
+            <p class="imagetext">CDS22-formula<br><span style="font-size:1.3rem ; color: rgb(219, 5, 69);">900
+                    billion sachets</span></p>
+            <p>Superior power Potency, 900 billion live bacteria per sachet</p><br>
+            <button class="btn-shop"  data-name="Product 1" data-price="10" type="submit">SHOP NOW</button>
+        </div>
+        <div class="image-two">
+            <img src="asset/product.png" alt="product" width="350">
+            <p class="imagetext">CDS22-formula<br><span style="font-size:1.3rem ; color: #ff2ba7;">900 billion
+                    sachets</span></p>
+            <p>Strong and convenient <br>Potency, <b>450 billion live bacteria per sachet</b> <br>Format, <b>Box of 12 sachets</b></p>
+            <button class="btn-shop"  data-name="Product 2" data-price="20" type="submit">SHOP NOW</button>
+        </div>
+        <div class="image-three">
+            <img src="asset/homepic.png" alt="homepic" width="280">
+            <p class="imagetext">CDS22-formula<br><span style="font-size:1.3rem ; color: rgb(0, 162, 255);">900
+                    billion sachets</span></p>
+            <p>Efficient and flexible Potency, <b>112 billion live bacteria per capsule</b> Format: <b>Box of 20
+                    individually packaged capsules</b></p>
+            <button class="btn-shop"  data-name="Product 3" data-price="15" type="submit">SHOP NOW</button>
+        </div>
+        <span class="icon-left-right">&#x276F;</span>
+    </div>
+    <div class="points">
+        <h1 class="blue">Follow the dosage instructions indicated on the packaging.</h1>
+        <ul>
+            <li>Do not exceed the stated recommended daily dose unless otherwise advised by a doctor
+            </li>
+            <li> Store the product in the refrigerator at a temperature of 2-8°C an" away from light. The product
+                can withstand room temperature (max 25°C) for one
+                week without altering its effectiveness.
+            </li>
+            <li> CDS22-formula is a food supplement; it does not replace a varied and balanced diet.
+            </li>
+            <li>Keep out of reach of young children.
+            </li>
+            <li> This product is not intended for the diagnosis, treatment, cure, or prvention of diseases</li>
+        </ul>
+    </div>
+
+    <div class="points">
+        <h1 class="pink" style="font-size:3rem ;">FAQ</h1>
+        <div class="text-border">
+            <p>What does CDS22-formula contain?</p>
+        </div>
+        <div class="text-border">
+            <p>Where can I find CDS22-formula?</p>
+        </div>
+        <div class="text-border">
+            <p>Why should I take CDS22-formula?</p>
+        </div>
+        <div class="text-border">
+            <p>How do I take CDS22-formula?</p>
+        </div>
+        <div class="text-border">
+            <p>Does CDS22-formula contain allergens?</p>
+        </div>
+        <div class="text-border">
+            <p>Why must CDS22-formula be stored in the refrigerator?</p>
+        </div>
+        <div class="text-border">
+            <p>Can CDS22-formula have side effects?</p>
+        </div>
+        <div class="text-border">
+            <p>Can CDS22-formula be taken during antibiotic therapy?</p>
+        </div>
+        <div class="text-border">
+            <p>Can CDS22-formula be taken during pregnancy?</p>
+        </div>
+    </div>
+</section>
   <div class="container">
     <div class="form-container">
       <!-- Form Section -->
@@ -223,6 +309,85 @@ contactForm.addEventListener('submit', (e) => {
     console.error("Error writing to Firebase:", error);
   });
 });
+
+
+
+let cart = [];
+const cartCount = document.getElementById("cartCount");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+const cartSection = document.getElementById("cartSection");
+
+function toggleCart() {
+    cartSection.classList.toggle("visible");
+}
+
+document.querySelectorAll(".btn-shop").forEach(button => {
+    button.addEventListener("click", () => {
+        const productName = button.getAttribute("data-name");
+        const productPrice = parseFloat(button.getAttribute("data-price"));
+        const existingProduct = cart.find(item => item.name === productName);
+
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.push({ name: productName, price: productPrice, quantity: 1 });
+        }
+
+        updateCart();
+    });
+});
+function updateCart() {
+    cartItems.innerHTML = ""; 
+    let total = 0;
+
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+            <span>${item.name}</span>
+            <span>$${item.price.toFixed(2)}</span>
+            <span>
+                <button onclick="decrease('${item.name}')">-</button>
+                ${item.quantity}
+                <button onclick="increase('${item.name}')">+</button>
+            </span>
+        `;
+        cartItems.appendChild(cartItem);
+    });
+
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); 
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`; 
+}
+
+function decrease(productName) {
+    const product = cart.find(item => item.name === productName);
+    if (product) {
+        product.quantity--;
+        if (product.quantity === 0) {
+            cart = cart.filter(item => item.name !== productName); // Remove item if quantity is 0
+        }
+        updateCart();
+    }
+}
+
+function increase(productName) {
+    const product = cart.find(item => item.name === productName);
+    if (product) {
+        product.quantity++;
+        updateCart();
+    }
+}
+
+function clearCart() {
+    cart = [];
+    updateCart();
+}
+
+function closeCart() {
+    cartSection.classList.remove("visible");
+}
 
 </script>
 </body>

@@ -3,45 +3,41 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  header {
+    background-color: whitesmoke;
+    padding: 15px 20px;
+    padding-right: 80px;
+    padding-left: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
-  
-  .nav-links {
+  nav ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
     margin: 0;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  
-  .nav-links a.active {
-    color: pink;
-  }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
+    padding: 0;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    gap: 2px;
+  }
+  .home {
+    color: rgb(243, 103, 150);
+  }
+  nav ul li {
+    margin: 0 10px;
   }
   
-  .logo .highlight {
-    color: pink;
+  nav ul li a {
+    color: rgba(35, 35, 35, 0.865);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
   }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+ 
   .product-section {
     display: flex;
     justify-content: space-between;
@@ -302,12 +298,93 @@ body {
     background: url('path-to-orange-wave.png') no-repeat center center;
     background-size: cover;
   }
-  /* .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center; */
+  .sectionsix-heading {
+    padding: 6rem;
+    text-align: center;
+  }
+  .frontimages {
+    text-align: center;
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6rem;
+  }
+  .image-one {
+    padding: 4rem 3rem;
+    width: 28%;
+    height: auto;
+  }
+  .image-two {
+    width: 30%;
+    height: auto;
+  }
+  .image-three {
+    padding: 4rem 3rem;
+    width: 28%;
+    height: auto;
+  }
   
+  .imagetext {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  
+  .btn-shop {
+    color: #333;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #333;
+    border-radius: 25px;
+  }
+  .btn-shop:hover {
+    background-color: #1366bf;
+  }
+  .cart-section {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #f9f9f9;
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    width: 300px;
+  }
+  
+  .cart-section.visible {
+    display: block;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .icon-left-right {
+    margin-top: 10rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #3498db;
+    padding: 0.7rem;
+    justify-content: left;
+    align-items: center;
+  }
+  .text-border {
+    padding: 0 1rem;
+    margin-top: 0.6rem;
+    border: 1px solid black;
+    border-radius: 15px;
+  }
+  .points {
+    padding: 2rem;
+  }
+  .points ul li {
+    padding-top: 1rem;
+  }
+
+
+
+
 
   .form-container {
     display: flex;
